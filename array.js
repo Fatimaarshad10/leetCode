@@ -67,17 +67,29 @@
 // };
 
 
-var removeDuplicates = function(nums) {
-    let k = 1; 
+// var removeDuplicates = function(nums) {
+//     let k = 1; 
+//     const arr = []
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[i] !== nums[i - 1]) {
+//             nums[k] = nums[i]; 
+//             k++; 
+//         }
+//     }
+//     arr.push(k)
+//    console.log(arr)
+// };
+
+// removeDuplicates([1,1,2])
+
+var removeElement = function(nums, val) {
     const arr = []
-    for (let i = 1; i < nums.length; i++) {
-        if (nums[i] !== nums[i - 1]) {
-            nums[k] = nums[i]; 
-            k++; 
-        }
+   for(i = 0; i < nums.length ; i++){
+    if(nums[i] !== val){
+        arr.push(nums[i])
     }
-    arr.push(k)
-   console.log(arr)
+   }
+   console.log(arr.length)
 };
 
-removeDuplicates([1,1,2])
+removeElement([3,2,2,3,3,4 ] , 3)
