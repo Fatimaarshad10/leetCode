@@ -47,21 +47,37 @@
 
 
 
-var addTwoNumbers = function(l1, l2) {
-    let dummy = new ListNode(0);
-    let current = dummy;
-    let carry = 0;
+// var addTwoNumbers = function(l1, l2) {
+//     let dummy = new ListNode(0);
+//     let current = dummy;
+//     let carry = 0;
 
-    while (l1 !== null || l2 !== null || carry !== 0) {
-        let sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry;
-        carry = Math.floor(sum / 10);
+//     while (l1 !== null || l2 !== null || carry !== 0) {
+//         let sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry;
+//         carry = Math.floor(sum / 10);
 
-        current.next = new ListNode(sum % 10);
-        current = current.next;
+//         current.next = new ListNode(sum % 10);
+//         current = current.next;
 
-        if (l1) l1 = l1.next;
-        if (l2) l2 = l2.next;
+//         if (l1) l1 = l1.next;
+//         if (l2) l2 = l2.next;
+//     }
+
+//     return dummy.next; 
+// };
+
+
+var removeDuplicates = function(nums) {
+    let k = 1; 
+    const arr = []
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1]) {
+            nums[k] = nums[i]; 
+            k++; 
+        }
     }
-
-    return dummy.next; 
+    arr.push(k)
+   console.log(arr)
 };
+
+removeDuplicates([1,1,2])
