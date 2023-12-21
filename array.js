@@ -25,7 +25,7 @@
 //     this.next = (next === undefined ? 0 :next)
 // }
 
-// // Create a linked list 
+// // Create a linked list
 // const node1 = new ListNode(2)
 // const node2 = new ListNode(3)
 // const node3 = new ListNode(4)
@@ -45,8 +45,6 @@
 
 // printTheListOfNode(node1)
 
-
-
 // var addTwoNumbers = function(l1, l2) {
 //     let dummy = new ListNode(0);
 //     let current = dummy;
@@ -63,17 +61,16 @@
 //         if (l2) l2 = l2.next;
 //     }
 
-//     return dummy.next; 
+//     return dummy.next;
 // };
 
-
 // var removeDuplicates = function(nums) {
-//     let k = 1; 
+//     let k = 1;
 //     const arr = []
 //     for (let i = 1; i < nums.length; i++) {
 //         if (nums[i] !== nums[i - 1]) {
-//             nums[k] = nums[i]; 
-//             k++; 
+//             nums[k] = nums[i];
+//             k++;
 //         }
 //     }
 //     arr.push(k)
@@ -82,14 +79,59 @@
 
 // removeDuplicates([1,1,2])
 
-var removeElement = function(nums, val) {
-    const arr = []
-   for(i = 0; i < nums.length ; i++){
-    if(nums[i] !== val){
-        arr.push(nums[i])
-    }
-   }
-   console.log(arr.length)
-};
+// var removeElement = function(nums, val) {
+//     const arr = []
+//    for(i = 0; i < nums.length ; i++){
+//     if(nums[i] !== val){
+//         arr.push(nums[i])
+//     }
+//    }
+//    console.log(arr.length)
+// };
 
-removeElement([3,2,2,3,3,4 ] , 3)
+// removeElement([3,2,2,3,3,4 ] , 3)
+
+// var searchInsert = function (nums, target) {
+//   var searchIndex = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === target) {
+//       searchIndex = nums.indexOf(nums[i]);
+//     } else if (nums[i] > target) {
+//       nums.splice(i, 0, target);
+//       if (nums[i] === target) {
+//         searchIndex = nums.indexOf(nums[i]);
+//       }
+//       break;
+//     } else {
+//       nums.push(target);
+//     }
+//   }
+//   return searchIndex;
+// };
+
+// searchInsert([1, 3, 5, 6], 7);
+
+// With the binary search 
+// left side less
+// right side is higher 
+// middle and move to another target value 
+
+function searchInsert(nums, target){
+    let left = 0
+    let right = nums.length - 1
+    while(left <= right)
+    {
+        const mid = Math.floor((left + right)/2)
+        if(nums[mid] === target){
+            return mid
+        }else if (nums[mid] < target){
+            left = mid + 1
+        }
+        else {
+            right = mid - 1 
+        }
+    }
+    console.log(left)
+    
+} 
+searchInsert([2,3,4] , 1)
