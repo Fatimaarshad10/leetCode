@@ -25,7 +25,7 @@
 //     this.next = (next === undefined ? 0 :next)
 // }
 
-// // Create a linked list
+// Create a linked list
 // const node1 = new ListNode(2)
 // const node2 = new ListNode(3)
 // const node3 = new ListNode(4)
@@ -33,7 +33,7 @@
 // node1.next = node2
 // node2.next = node3
 
-// // 2 -> 3 -> 4
+// 2 -> 3 -> 4
 
 // function printTheListOfNode(head){
 //     let current =  head
@@ -63,6 +63,21 @@
 
 //     return dummy.next;
 // };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // var removeDuplicates = function(nums) {
 //     let k = 1;
@@ -180,18 +195,57 @@
 
 
 // Question no 2 ===> Merge array 
-var merge = function(nums1, m, nums2, n) {
-    nums1.length = m 
+// var merge = function(nums1, m, nums2, n) {
+//     nums1.length = m 
 
-    for(let i = 0 ; i < m+n ; i++){
-        if(nums2[i] !== undefined){
-            nums1.push(nums2[i])
+//     for(let i = 0 ; i < m+n ; i++){
+//         if(nums2[i] !== undefined){
+//             nums1.push(nums2[i])
           
-        } 
-        m = m+n 
-        n = 0
-    }
-   console.log(nums1.sort((a,b)=> a-b)) 
-};
+//         } 
+//         m = m+n 
+//         n = 0
+//     }
+//    console.log(nums1.sort((a,b)=> a-b)) 
+// };
 
-merge([-10,-4,-3  ,1,2,3,0,0] , 6 , [-3,2,5,6] , 3)
+// merge([-10,-4,-3  ,1,2,3,0,0] , 6 , [-3,2,5,6] , 3)
+
+
+// ========= Binary Search Tree  ==========
+function TreeNode(val, left, right) {
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+     }
+
+
+     var sortedArrayToBST = function(nums) {
+        if (nums.length === 0) {
+            return null;
+        }
+    
+        return sortedArrayToBSTHelper(nums, 0, nums.length - 1);
+    };
+    
+    function sortedArrayToBSTHelper(nums, start, end) {
+        if (start > end) {
+            return null;
+        }
+    
+        const mid = Math.floor((start + end) / 2);
+        const val = nums[mid];
+        const node = new TreeNode(val);
+    
+        node.left = sortedArrayToBSTHelper(nums, start, mid - 1);
+        node.right = sortedArrayToBSTHelper(nums, mid + 1, end);
+    
+        return node;
+    }
+    
+    // Example usage:
+    const root = sortedArrayToBST([-10, -3, 0, 5, 9]);
+    console.log(root);
+
+
+
