@@ -116,22 +116,82 @@
 // right side is higher 
 // middle and move to another target value 
 
-function searchInsert(nums, target){
-    let left = 0
-    let right = nums.length - 1
-    while(left <= right)
-    {
-        const mid = Math.floor((left + right)/2)
-        if(nums[mid] === target){
-            return mid
-        }else if (nums[mid] < target){
-            left = mid + 1
-        }
-        else {
-            right = mid - 1 
-        }
-    }
-    console.log(left)
+// function searchInsert(nums, target){
+//     let left = 0
+//     let right = nums.length - 1
+//     while(left <= right)
+//     {
+//         const mid = Math.floor((left + right)/2)
+//         if(nums[mid] === target){
+//             return mid
+//         }else if (nums[mid] < target){
+//             left = mid + 1
+//         }
+//         else {
+//             right = mid - 1 
+//         }
+//     }
+//     console.log(left)
     
-} 
-searchInsert([2,3,4] , 1)
+// } 
+// searchInsert([2,3,4] , 1)
+
+
+//  December 27 ===> Question no 1 ==> Easy Array
+// var plusOne = function(digits) {
+//     let array = []
+//     for(let i = 0 ; i < digits.length ; i++){
+//         if(i === digits.length - 1){
+//             const value = digits[i] + 1
+//             value.toString().split('').map((data)=>array.push(parseInt(data)))
+//         }else{
+//             array.push(digits[i])
+//         }
+//     }
+//     console.log(array)
+// };
+
+// plusOne([9,9])
+
+
+
+
+// var plusOne = function(digits) {
+//     let carry = 1;
+//     for (let i = 0; i < digits.length; i++) {
+//         const sum = digits[i] + carry;
+//         digits[i] = sum % 10; 
+//         carry = Math.floor(sum / 10); 
+//         if (carry === 0) {
+//             break;
+//         }
+//     }
+
+//     if (carry > 0) {
+//         digits.unshift(carry);
+//     }
+
+//     return digits;
+// };
+
+// // Example usage
+// const result = plusOne([9, 9]);
+// console.log(result);
+
+
+// Question no 2 ===> Merge array 
+var merge = function(nums1, m, nums2, n) {
+    nums1.length = m 
+
+    for(let i = 0 ; i < m+n ; i++){
+        if(nums2[i] !== undefined){
+            nums1.push(nums2[i])
+          
+        } 
+        m = m+n 
+        n = 0
+    }
+   console.log(nums1.sort((a,b)=> a-b)) 
+};
+
+merge([-10,-4,-3  ,1,2,3,0,0] , 6 , [-3,2,5,6] , 3)
