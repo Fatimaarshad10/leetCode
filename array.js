@@ -213,39 +213,63 @@
 
 
 // ========= Binary Search Tree  ==========
-function TreeNode(val, left, right) {
-    this.val = (val===undefined ? 0 : val)
-    this.left = (left===undefined ? null : left)
-    this.right = (right===undefined ? null : right)
-     }
+// function TreeNode(val, left, right) {
+//     this.val = (val===undefined ? 0 : val)
+//     this.left = (left===undefined ? null : left)
+//     this.right = (right===undefined ? null : right)
+//      }
 
 
-     var sortedArrayToBST = function(nums) {
-        if (nums.length === 0) {
-            return null;
+//      var sortedArrayToBST = function(nums) {
+//         if (nums.length === 0) {
+//             return null;
+//         }
+    
+//         return sortedArrayToBSTHelper(nums, 0, nums.length - 1);
+//     };
+    
+//     function sortedArrayToBSTHelper(nums, start, end) {
+//         if (start > end) {
+//             return null;
+//         }
+    
+//         const mid = Math.floor((start + end) / 2);
+//         const val = nums[mid];
+//         const node = new TreeNode(val);
+    
+//         node.left = sortedArrayToBSTHelper(nums, start, mid - 1);
+//         node.right = sortedArrayToBSTHelper(nums, mid + 1, end);
+    
+//         return node;
+//     }
+    
+//     // Example usage:
+//     const root = sortedArrayToBST([-10, -3, 0, 5, 9]);
+//     console.log(root);
+
+
+
+var generate = function(numRows) {
+    const data = []
+    for (let i = 0; i < numRows; i++) {
+        const row = [];
+
+        for (let j = 0; j <= i; j++) {
+            if (j === 0 || j === i) {
+                row.push(1);
+            } else {
+                // Calculate the value based on the previous row
+                console.log(data[2-1][2-1] + data[2-1][2])
+                row.push(data[i - 1][j - 1] + data[i - 1][j]);
+            }
+
         }
-    
-        return sortedArrayToBSTHelper(nums, 0, nums.length - 1);
-    };
-    
-    function sortedArrayToBSTHelper(nums, start, end) {
-        if (start > end) {
-            return null;
-        }
-    
-        const mid = Math.floor((start + end) / 2);
-        const val = nums[mid];
-        const node = new TreeNode(val);
-    
-        node.left = sortedArrayToBSTHelper(nums, start, mid - 1);
-        node.right = sortedArrayToBSTHelper(nums, mid + 1, end);
-    
-        return node;
+
+        data.push(row);
+        // console.log(row.join(' '));
     }
-    
-    // Example usage:
-    const root = sortedArrayToBST([-10, -3, 0, 5, 9]);
-    console.log(root);
 
+    // console.log(data);
+};
 
-
+generate(5)
