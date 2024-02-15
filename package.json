@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./array.js"
+    "start": "node ./array.js"
   },
   "keywords": [],
   "author": "",
