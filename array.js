@@ -342,3 +342,82 @@
 
 // }
 // removeDuplicate([1,1,2])
+
+// 16/02/2024
+// Searching for an item an Array 
+
+// function linearSearch ( array ,length , element ){
+// if(array == null || length == 0){
+//     return false;
+// }
+// for(let i = 0 ; i < length ; i++){
+//     if(array[i] == element){
+//         return true
+//     }
+// }
+// return false
+// }
+
+// const array = new Array(6)
+// let length = 0 
+// for(let i = 0 ; i < 6 ; i++){
+//     array[length++]  = i
+// }
+// console.log(array)
+// console.log("Does the array contain the element 4? - " +linearSearch(array, length, 4))
+// console.log("Does the array contain the element 30? - " +linearSearch(array, length, 30))
+
+
+/**
+ * @param {number[]} arr
+ * @return {boolean}
+ */
+// var checkIfExist = function(arr) {
+//     for(let i = 0 ; i < arr.length ; i++){
+//         for(let j = 0; j < arr.length ; j++){
+//                 if(i != j && arr[i] === 2  * arr[j]){
+//                     return true
+//                 }
+//         }
+//     } 
+//     return false 
+// };
+
+// console.log(checkIfExist([10,2,5,3])) // true 10 exist 
+// console.log(checkIfExist([3,1,7,11])) // false 
+// console.log(checkIfExist([7,1,14,11])) // true 14 exist 
+
+/**
+ * @param {number[]} arr
+ * @return {boolean}
+ */
+var validMountainArray = function(arr) {
+    if (arr.length < 3) {
+        return false;
+    }
+
+    let decreasing = false;
+    let increasing = false;
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] < arr[i + 1]) {
+            if (decreasing) {
+                return false;
+            }
+            increasing = true;
+        } else if (arr[i] > arr[i + 1]) {
+            if (!increasing) {
+                return false;
+            }
+            decreasing = true;
+        } else {
+            return false; 
+        }
+    }
+
+    return decreasing && increasing;
+};
+
+console.log(validMountainArray([2,1]))
+console.log(validMountainArray([3,5,5]))
+console.log(validMountainArray([0,3,2,1]))
