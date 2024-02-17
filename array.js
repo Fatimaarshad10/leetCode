@@ -387,37 +387,71 @@
 // console.log(checkIfExist([3,1,7,11])) // false 
 // console.log(checkIfExist([7,1,14,11])) // true 14 exist 
 
+// /**
+//  * @param {number[]} arr
+//  * @return {boolean}
+//  */
+// var validMountainArray = function(arr) {
+//     if (arr.length < 3) {
+//         return false;
+//     }
+
+//     let decreasing = false;
+//     let increasing = false;
+
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if (arr[i] < arr[i + 1]) {
+//             if (decreasing) {
+//                 return false;
+//             }
+//             increasing = true;
+//         } else if (arr[i] > arr[i + 1]) {
+//             if (!increasing) {
+//                 return false;
+//             }
+//             decreasing = true;
+//         } else {
+//             return false; 
+//         }
+//     }
+
+//     return decreasing && increasing;
+// };
+
+// console.log(validMountainArray([2,1]))
+// console.log(validMountainArray([3,5,5]))
+// console.log(validMountainArray([0,3,2,1]))
+
+
+// in place array 
+// Input: arr = [17,18,5,4,6,1]
+// Output: [18,6,6,6,1,-1]
 /**
  * @param {number[]} arr
- * @return {boolean}
+ * @return {number[]}
  */
-var validMountainArray = function(arr) {
-    if (arr.length < 3) {
-        return false;
-    }
+// var replaceElements = function(arr) {
+//     for(let i = 0 ; i < arr.length -1 ; i++){
+//         if(arr[i] < arr[i+1]){
+//             arr[i] = arr[i+1]
+//         }
+//     }
+//     arr[arr.length - 1] = -1; 
+//     // return arr;
+//     console.log(arr)
+// };
 
-    let decreasing = false;
-    let increasing = false;
-
+var replaceElements = function(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] < arr[i + 1]) {
-            if (decreasing) {
-                return false;
+        let max = arr[i + 1];
+        for (let j = i + 2; j < arr.length; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
             }
-            increasing = true;
-        } else if (arr[i] > arr[i + 1]) {
-            if (!increasing) {
-                return false;
-            }
-            decreasing = true;
-        } else {
-            return false; 
         }
+        arr[i] = max;
     }
-
-    return decreasing && increasing;
+    arr[arr.length - 1] = -1;
+    console.log(arr) ;
 };
-
-console.log(validMountainArray([2,1]))
-console.log(validMountainArray([3,5,5]))
-console.log(validMountainArray([0,3,2,1]))
+replaceElements([17,18,5,4,6,1])
