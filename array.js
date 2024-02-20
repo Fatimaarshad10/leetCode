@@ -276,7 +276,6 @@
 // merge([1], 1, [], 0);
 // merge([0], 0, [1], 1);
 
-
 // 15/02/2024
 // Deleting From the End of an Array
 // const newArray = new Array(10)
@@ -288,13 +287,13 @@
 // value--
 // for (let i = 0; i < value; i++) {
 //     console.log("Index " +i +" contains " +newArray[i])
-    
+
 // }
 
 // // Deleting From the Start of an Array
 // for (let i = 0; i < value; i++) {
 //    newArray[i-1] = newArray[i]
-    
+
 // }
 // value--;
 // for (let i = 0; i < value; i++) {
@@ -324,11 +323,10 @@
 //         k++;
 //     }
 //    }
-//    console.log(nums)  
+//    console.log(nums)
 // };
 // removeElement([2,3,4] ,  3)
 // removeElement([0,1,2,2,3,0,4,2] ,  2)
-
 
 // const removeDuplicate = function (nums){
 //     let k = 0
@@ -344,7 +342,7 @@
 // removeDuplicate([1,1,2])
 
 // 16/02/2024
-// Searching for an item an Array 
+// Searching for an item an Array
 
 // function linearSearch ( array ,length , element ){
 // if(array == null || length == 0){
@@ -359,14 +357,13 @@
 // }
 
 // const array = new Array(6)
-// let length = 0 
+// let length = 0
 // for(let i = 0 ; i < 6 ; i++){
 //     array[length++]  = i
 // }
 // console.log(array)
 // console.log("Does the array contain the element 4? - " +linearSearch(array, length, 4))
 // console.log("Does the array contain the element 30? - " +linearSearch(array, length, 30))
-
 
 /**
  * @param {number[]} arr
@@ -379,13 +376,13 @@
 //                     return true
 //                 }
 //         }
-//     } 
-//     return false 
+//     }
+//     return false
 // };
 
-// console.log(checkIfExist([10,2,5,3])) // true 10 exist 
-// console.log(checkIfExist([3,1,7,11])) // false 
-// console.log(checkIfExist([7,1,14,11])) // true 14 exist 
+// console.log(checkIfExist([10,2,5,3])) // true 10 exist
+// console.log(checkIfExist([3,1,7,11])) // false
+// console.log(checkIfExist([7,1,14,11])) // true 14 exist
 
 // /**
 //  * @param {number[]} arr
@@ -411,7 +408,7 @@
 //             }
 //             decreasing = true;
 //         } else {
-//             return false; 
+//             return false;
 //         }
 //     }
 
@@ -422,8 +419,7 @@
 // console.log(validMountainArray([3,5,5]))
 // console.log(validMountainArray([0,3,2,1]))
 
-
-// in place array 
+// in place array
 // Input: arr = [17,18,5,4,6,1]
 // Output: [18,6,6,6,1,-1]
 /**
@@ -436,22 +432,126 @@
 //             arr[i] = arr[i+1]
 //         }
 //     }
-//     arr[arr.length - 1] = -1; 
+//     arr[arr.length - 1] = -1;
 //     // return arr;
 //     console.log(arr)
 // };
 
-var replaceElements = function(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        let max = arr[i + 1];
-        for (let j = i + 2; j < arr.length; j++) {
-            if (arr[j] > max) {
-                max = arr[j];
-            }
-        }
-        arr[i] = max;
+// var replaceElements = function(arr) {
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         // let max = arr[i + 1];
+//         for (let j = i + 2; j < arr.length; j++) {
+//             if (arr[j] > max) {
+//                 max = arr[j];
+//             }
+//         }
+//         arr[i] = max;
+//     }
+//     arr[arr.length - 1] = -1;
+//     console.log(arr) ;
+// };
+// var replaceElements = function(arr) {
+//     let max = -1; // Initialize max to -1
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         let currentElement = arr[i];
+//         arr[i] = max;
+//         max = Math.max(max, currentElement);
+//     }
+//     console.log(arr);
+// };
+
+// replaceElements([17,18,5,4,6,1])
+
+// remove duplicate
+// function removeDuplicates (nums){
+//     let length = nums.length
+//     for(let i = length -2 ; i >=0 ; i--){
+//         if(nums[i]  == nums[i+1]){
+//             for (let j = i + 1; j < length; j++) {
+//                 nums[j - 1] = nums[j];
+//             }
+//             length--;
+//         }
+//     }
+//     console.log(length)
+// }
+// removeDuplicates( [1, 1, 2])
+//  copy and remove duplicate
+// function copyWithRemovedDuplicates(nums){
+//     if(nums === null || nums.length == 0){
+//         return nums
+//     }
+//     let uniqueNumbers = 0
+//     for(let i =0; i < nums.length ; i++){
+//         if(i==0 || nums[i] != nums[i - 1]){
+//             uniqueNumbers++
+//         }
+//     }
+//     const newArray = new Array()
+//     let positionInResult = 0
+//     for(let i = 0 ; i < nums.length ; i++){
+//         if(i == 0 || nums[i] != nums[i-1]){
+//             newArray.push(nums[i])
+//             positionInResult++
+//         }
+//     }
+//     console.log(newArray)
+// }
+
+// copyWithRemovedDuplicates([1, 1, 2])
+
+// Use the pointer
+
+// Writepointer is write whatever read with the readPointer
+// function removeDuplicates (nums){
+// if(nums == null){
+//     return 0
+// }
+// let writePointer = 1
+// for(let readPointer = 1 ; readPointer <nums.length ; readPointer++){
+//     if(nums[readPointer] != nums[readPointer -1 ]){
+//         nums[writePointer] = nums[readPointer]
+//         writePointer++
+//     }
+// }
+// console.log(writePointer)
+// }
+// removeDuplicates([1,2,3,2,3])
+
+// var moveZeroes = function(nums) {
+//     if(nums == null){
+//         return 0;
+//     }
+//     let writePointer = 0
+//     // readPointer = 3 4
+//     for(let readPointer = 0  ; readPointer < nums.length ; readPointer++){
+//         if(nums[readPointer] != 0){
+//             nums[writePointer] = nums[readPointer]
+//             if(readPointer !== writePointer){
+//                 nums[readPointer] = 0
+//             }
+//             writePointer++
+//         }
+
+//     }
+// console.log(nums)
+// };
+
+// moveZeroes([0,0,0,3,12 , 0])
+
+var sortArrayByParity = function (nums) {
+  if (nums == null) {
+    return 0;
+  }
+  let writePointer = 0;
+  for (let readPointer = 0; readPointer < nums.length; readPointer++) {
+    if (parseInt(nums[readPointer] % 2) == 0) {
+      if (readPointer !== writePointer) {
+        [nums[readPointer], nums[writePointer]] = [nums[writePointer], nums[readPointer]];
+      }
+      writePointer++;
     }
-    arr[arr.length - 1] = -1;
-    console.log(arr) ;
+  }
+  console.log(nums);
 };
-replaceElements([17,18,5,4,6,1])
+sortArrayByParity([3, 1, 2, 4]);
