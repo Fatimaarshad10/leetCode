@@ -278,13 +278,13 @@
 
 // 15/02/2024
 // Deleting From the End of an Array
-// const newArray = new Array(10)
-// let value = 0
-// for (let i = 0; i < 6; i++) {
-//     newArray[value] = i
-//     value++
-// }
-// value--
+const newArray = new Array(10);
+let value = 0;
+for (let i = 0; i < 6; i++) {
+  newArray[value] = i;
+  value++;
+}
+value--;
 // for (let i = 0; i < value; i++) {
 //     console.log("Index " +i +" contains " +newArray[i])
 
@@ -323,7 +323,7 @@
 //         k++;
 //     }
 //    }
-//    console.log(nums)
+//    console.log(k)
 // };
 // removeElement([2,3,4] ,  3)
 // removeElement([0,1,2,2,3,0,4,2] ,  2)
@@ -379,7 +379,10 @@
 //     }
 //     return false
 // };
-
+// i = 1   | j = 0  | 1 != 0 && 2 === 2 * 10
+//         | j = 1  | 1 != 1 && 2 === 2 * 2
+//         | j = 2  | 1 != 2 && 2 === 2 * 5   true
+//         | j = 3  | 1 != 3 && 2 === 2 * 3
 // console.log(checkIfExist([10,2,5,3])) // true 10 exist
 // console.log(checkIfExist([3,1,7,11])) // false
 // console.log(checkIfExist([7,1,14,11])) // true 14 exist
@@ -539,19 +542,178 @@
 
 // moveZeroes([0,0,0,3,12 , 0])
 
-var sortArrayByParity = function (nums) {
-  if (nums == null) {
-    return 0;
-  }
-  let writePointer = 0;
-  for (let readPointer = 0; readPointer < nums.length; readPointer++) {
-    if (parseInt(nums[readPointer] % 2) == 0) {
-      if (readPointer !== writePointer) {
-        [nums[readPointer], nums[writePointer]] = [nums[writePointer], nums[readPointer]];
-      }
-      writePointer++;
+// var sortArrayByParity = function (nums) {
+//   if (nums == null) {
+//     return 0;
+//   }
+//   let writePointer = 0;
+//   for (let readPointer = 0; readPointer < nums.length; readPointer++) {
+//     if (parseInt(nums[readPointer] % 2) == 0) {
+//       if (readPointer !== writePointer) {
+//         [nums[readPointer], nums[writePointer]] = [nums[writePointer], nums[readPointer]];
+//       }
+//       writePointer++;
+//     }
+//   }
+//   console.log(nums);
+// };
+// sortArrayByParity([3, 1, 2, 4]);
+
+// const Student = [
+//     {
+//         "id":1,
+//         "name":"Fatima"
+//     },
+//     {
+//         "id":2,
+//         "name":"Noor"
+//     },
+// ]
+
+// function data (){
+//     return new Promise((resolve  , reject)=>{
+//         // setTimeout(()=>{
+//             const data = Student
+//             const error = null
+//             if(error){
+//                 reject(error)
+//             }else{
+//                 resolve(data)
+//             }
+//         })
+//     // },0)
+// }
+
+// let counter = 0
+// const maxRepitition = 5
+// const intervalId = setInterval(()=>{
+//    data().then((data)=> {
+
+//     console.log(data)
+//     counter++
+//     if(counter >= maxRepitition){
+//         clearInterval(intervalId)
+//     }
+// }).catch((error)=>{
+//     console.error(error)
+// })
+// })
+
+// const anotherData = async()=>{
+// const data = Student
+// console.log('This is async data ' , data)
+// }
+// anotherData().then(()=>{
+//     console.log('data')
+// })
+
+// function fetchData (callback){
+//     setTimeout(()=>{
+//         const data = "Async data"
+//         callback(data)
+//     } , 1000)
+// }
+// fetchData((result)=>{
+// console.log(result)
+// })
+
+// const EventEmitter = require('events');
+
+// class MyEmitter extends EventEmitter {
+//     to(user, message) {
+//         this.emit(user, message);
+//     }
+// }
+
+// const myEmitter = new MyEmitter();
+
+// myEmitter.on('user', (data) => {
+//     console.log(data);
+// });
+
+// myEmitter.to('user', 'Hello, User!');
+
+// 26/02/2024
+
+// var heightChecker = function(heights) {
+//     // slice use for coping the array did not disturb original array
+//     let expected = heights.slice();
+//     let expected = [...heights];
+
+//     expected.sort((a,b)=>{
+//         return a-b
+//     })
+//     let k = 0
+//     for(let i = 0 ; i < heights.length ; i++){
+//          if ( heights[i] !== expected[i]){
+//            k++
+//         }
+//     }
+//     console.log(k)
+// };
+
+// heightChecker([5,1,2,3,4])
+// heightChecker([1,2,3,4,5])
+// heightChecker( [1,1,4,2,1,3])
+
+// Memory Usage: 49.1 MB
+// Runtime: 56 ms
+// use the spread operator for shallow copy best approach
+// Runtime: 54 ms
+// Memory Usage: 48.7 MB
+
+// Third Maximum Number
+// third distinct maximum mean it will check the element this
+// first element is greater then first distinct (alag) max
+//  second check and if third is not then return the max
+
+// var thirdMax = function(nums) {
+//     let firstMax = -Infinity;
+//     let secondMax = -Infinity;
+//     let thirdMax = -Infinity;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] > firstMax) {
+//             thirdMax = secondMax;
+//             secondMax = firstMax;
+//             firstMax = nums[i];
+//         } else if (nums[i] > secondMax && nums[i] < firstMax) {
+//             thirdMax = secondMax;
+//             secondMax = nums[i];
+//         } else if (nums[i] > thirdMax && nums[i] < secondMax) {
+//             thirdMax = nums[i];
+//         }
+//     }
+
+//     return thirdMax === -Infinity ? firstMax : thirdMax;
+// };
+
+// console.log(thirdMax([3, 2, 1]));     // Output: 1
+// console.log(thirdMax([2, 1]));         // Output: 2
+// console.log(thirdMax([2, 2, 3, 1]));   // Output: 1
+
+  
+// Find All Numbers Disappeared in an Array
+
+var findDisappearedNumbers = function(nums) {
+    const n = nums.length;
+
+    for (let i = 0; i < n; i++) {
+        const index = Math.abs(nums[i]) - 1;
+        if (nums[index] > 0) {
+            nums[index] = -nums[index];
+        }
     }
-  }
-  console.log(nums);
+
+    const result = [];
+    for (let i = 0; i < n; i++) {
+        if (nums[i] > 0) {
+            result.push(i + 1);
+        }
+    }
+
+    console.log(result);
 };
-sortArrayByParity([3, 1, 2, 4]);
+
+
+findDisappearedNumbers( [4,3,2,7,8,2,3,1])
