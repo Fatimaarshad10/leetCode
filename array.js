@@ -695,25 +695,27 @@ value--;
   
 // Find All Numbers Disappeared in an Array
 
-var findDisappearedNumbers = function(nums) {
-    const n = nums.length;
+// var findDisappearedNumbers = function(nums) {
+//     const n = nums.length;
 
-    for (let i = 0; i < n; i++) {
-        const index = Math.abs(nums[i]) - 1;
-        if (nums[index] > 0) {
-            nums[index] = -nums[index];
-        }
-    }
+//     for (let i = 0; i < n; i++) {
+//         const index = Math.abs(nums[i]) - 1;
+//         if (nums[index] > 0) {
+//             nums[index] = -nums[index];
+//         }
+//     }
 
-    const result = [];
-    for (let i = 0; i < n; i++) {
-        if (nums[i] > 0) {
-            result.push(i + 1);
-        }
-    }
+//     const result = [];
+//     for (let i = 0; i < n; i++) {
+//         if (nums[i] > 0) {
+//             result.push(i + 1);
+//         }
+//     }
 
-    console.log(result);
-};
+//     console.log(result);
+// };
 
 
-findDisappearedNumbers( [4,3,2,7,8,2,3,1])
+// findDisappearedNumbers( [4,3,2,7,8,2,3,1])
+
+
