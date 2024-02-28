@@ -44,7 +44,43 @@
 //     }
 //     newArray.map((data)=> nums.unshift(data) )
 //    return nums
-
-
-    
 // };
+
+// 28/02/2024
+// Contain Duplicate
+// var containsDuplicate = function (nums) {
+//   let pointer = false;
+//   nums.sort((a,b)=> a-b)
+//   for (let i = 0; i < nums.length; i++) {
+//     // for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] === nums[i + 1]) {
+//         pointer = true;
+//         break
+//       }
+//     // }
+//   }
+//   console.log(pointer);
+// };
+// containsDuplicate([1, 2, 3, 1]);
+// containsDuplicate([1, 2, 3, 4]);
+// containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]);
+
+// var singleNumber = function(nums) {
+//     let single = nums[0]
+//     for(let i = 1 ; i < nums.length ; i++){
+//         single = single ^ nums[i]
+//         // console.log(single)
+//     }
+//     console.log(single)
+    // let result = 0;
+// return nums.reduce((acc,next)=> acc ^ next)
+    // for (let num of nums) {
+    //     console.log(num)
+    // //   result ^= num;
+    // }
+  
+    // console.log (result);
+//   };
+// singleNumber([2,2,1])
+// singleNumber([4,4,1,2,1,2, 5])
+// singleNumber([1])
