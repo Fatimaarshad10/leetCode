@@ -84,3 +84,23 @@
 // singleNumber([2,2,1])
 // singleNumber([4,4,1,2,1,2, 5])
 // singleNumber([1])
+
+// 29/02/2024
+var intersect = function(nums1, nums2) {
+    let newArray = []
+    for(let i = 0 ; i < nums1.length ; i++){
+        for(let j = 0 ; j < nums2.length ; j++){
+            if(nums1[i] === nums2[j]){
+                newArray.push(nums1[i])
+                nums2[j] = undefined;
+                break
+            }
+        }
+    }
+   console.log(newArray)
+};
+
+intersect([4,7,9,7,6,7],
+    [5,0,0,6,1,6,2,2,4])
+intersect([4,9,5],[9,4,9,8,4] )
+// nums1 = , nums2 = 
