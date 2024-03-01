@@ -72,35 +72,106 @@
 //         // console.log(single)
 //     }
 //     console.log(single)
-    // let result = 0;
+// let result = 0;
 // return nums.reduce((acc,next)=> acc ^ next)
-    // for (let num of nums) {
-    //     console.log(num)
-    // //   result ^= num;
-    // }
-  
-    // console.log (result);
+// for (let num of nums) {
+//     console.log(num)
+// //   result ^= num;
+// }
+
+// console.log (result);
 //   };
 // singleNumber([2,2,1])
 // singleNumber([4,4,1,2,1,2, 5])
 // singleNumber([1])
 
 // 29/02/2024
-var intersect = function(nums1, nums2) {
-    let newArray = []
-    for(let i = 0 ; i < nums1.length ; i++){
-        for(let j = 0 ; j < nums2.length ; j++){
-            if(nums1[i] === nums2[j]){
-                newArray.push(nums1[i])
-                nums2[j] = undefined;
-                break
-            }
-        }
-    }
-   console.log(newArray)
-};
+// var intersect = function(nums1, nums2) {
+//     let newArray = []
+//     for(let i = 0 ; i < nums1.length ; i++){
+//         for(let j = 0 ; j < nums2.length ; j++){
+//             if(nums1[i] === nums2[j]){
+//                 newArray.push(nums1[i])
+//                 nums2[j] = undefined;
+//                 break
+//             }
+//         }
+//     }
+//    console.log(newArray)
+// };
 
-intersect([4,7,9,7,6,7],
-    [5,0,0,6,1,6,2,2,4])
-intersect([4,9,5],[9,4,9,8,4] )
-// nums1 = , nums2 = 
+// intersect([4,7,9,7,6,7],
+//     [5,0,0,6,1,6,2,2,4])
+// intersect([4,9,5],[9,4,9,8,4] )
+// nums1 = , nums2 =
+
+// function rotateLeft(d, arr) {
+//   let newArray = arr.splice(d);
+//   const newData = [...newArray, ...arr];
+//   console.log(newData);
+// }
+// rotateLeft(2, [1, 2, 3, 4, 5]);
+
+
+// stringList=['ab', 'ab', 'abc']
+// queries = ['ab', 'abc', 'bc']
+// query check how many ab in the string list
+// abc is 1 time ab 2 time and bc 0 
+
+// function matchingStrings(stringList, queries) {
+//     // Write your code here
+//     let count = 0
+//     let newArray = []
+//     for(let i = 0 ; i < queries.length ; i++ ){
+//         for(let j = 0 ; j < stringList.length ; j++){
+//             if(queries[i] === stringList[j]){
+               
+//                 console.log('stringList[j]',stringList[j])
+//                 count++
+               
+
+//             }
+//         }
+//         newArray.push(count)
+//         count = 0
+//     }
+//     console.log(newArray)
+// }
+// matchingStrings(['aba', 'baba', 'aba' , 'xzxb'],  ['aba', 'xzxb', 'ab'])
+// matchingStrings(['def', 'de', 'fgh' , 'xzxb'],  ['de', 'lmn', 'fgh'])
+
+
+// n = 10
+// queries = [[1,5,3],[4,8,7], [6,9,1]]
+// function arrayManipulation(n, queries) {
+
+//     let newArray = new Array(n).fill(0);
+//     // Write your code here
+//     for(let i = 0 ; i < queries.length  ; i++){
+//             const pick = queries[i]
+//             const a = pick[0]
+//             const b = pick[1]
+//             const k = pick[2]
+//            newArray[a-1] +=  k 
+//            if (b < newArray.length) {
+//             newArray[b] -= k;
+//         }
+      
+//     }
+//     let max = 0;
+//     let current = 0;
+//     for (let j = 0; j < newArray.length; j++) {
+//         current += newArray[j];
+//         if (current > max) {
+//             max = current;
+//         }
+//     }
+
+//     console.log(max);
+// }
+
+
+
+// arrayManipulation(10, [[1,5,3],[4,8,7],[6,9,1]])
+// arrayManipulation(10, [[1, 2 , 100],[2 ,5 ,100],[3 ,4 ,100]])
+
