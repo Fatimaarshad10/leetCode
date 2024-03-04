@@ -112,7 +112,7 @@
 // }
 // rotateLeft(2, [1, 2, 3, 4, 5]);
 
-
+// 01/03/2024
 // stringList=['ab', 'ab', 'abc']
 // queries = ['ab', 'abc', 'bc']
 // query check how many ab in the string list
@@ -175,3 +175,44 @@
 // arrayManipulation(10, [[1,5,3],[4,8,7],[6,9,1]])
 // arrayManipulation(10, [[1, 2 , 100],[2 ,5 ,100],[3 ,4 ,100]])
 
+// 02/03/2024 hackerrank test
+// holiday
+
+// 04/03/2024
+
+// Each row must contain the digits 1-9 without repetition.
+// Each column must contain the digits 1-9 without repetition.
+// Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+// var isValidSudoku = function(board) {
+//     const row = {}
+//     const column ={}
+//     const box = {}
+//      for(let i = 0 ; i < 9 ; i++){
+//         for(let j = 0 ; j< 9 ; j++){
+//             const value = board[i][j]
+//             if(value !== '.'){
+//                 const boxIndex = Math.floor(i/3)*3 + Math.floor(j/3)
+//                 if(row[`${i}-${value}`] || 
+//                 column[`${j}-${value}`] ||
+//                 box[`${boxIndex}-${value}`] ){
+//                     return false
+//                 }
+          
+
+//                 row[`${i}-${value}`] = true
+//                 column[`${j}-${value}`] = true
+//                 box[`${boxIndex}-${value}`] = true
+//             }
+//         }
+//     }
+//     return true
+// };
+// isValidSudoku([["5","3",".",".","7",".",".",".","."]
+// ,["6",".",".","1","9","5",".",".","."]
+// ,[".","9","8",".",".",".",".","6","."]
+// ,["8",".",".",".","6",".",".",".","3"]
+// ,["4",".",".","8",".","3",".",".","1"]
+// ,["7",".",".",".","2",".",".",".","6"]
+// ,[".","6",".",".",".",".","2","8","."]
+// ,[".",".",".","4","1","9",".",".","5"]
+// ,[".",".",".",".","8",".",".","7","9"]])
