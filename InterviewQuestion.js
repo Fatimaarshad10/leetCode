@@ -216,3 +216,46 @@
 // ,[".","6",".",".",".",".","2","8","."]
 // ,[".",".",".","4","1","9",".",".","5"]
 // ,[".",".",".",".","8",".",".","7","9"]])
+
+
+// 05/03/2024
+// var rotate = function(matrix) {
+//     let array = []
+//     for(let i = 0; i < matrix.length ; i++){
+//         for(let j = i+1 ; j < matrix.length ; j++){
+//             let temp = matrix[i][j]
+//             matrix[i][j] = matrix[j][i]
+//             matrix[j][i] =  temp
+            
+//         }
+//     }
+//     for(let i = 0 ; i < matrix.length ; i++){
+//         matrix[i].reverse()
+//     }
+//     console.log(matrix)
+// };
+// // 
+// // Output: [[7,4,1],[8,5,2],[9,6,3]]
+
+// rotate([[1,2,3],[4,5,6],[7,8,9]])
+
+
+// var reverseString = function(s) {
+  
+//     console.log(s.reverse())
+// };
+
+// // Output: ["o","l","l","e","h"]
+// reverseString(["h","e","l","l","o"])
+
+// function reverse(n) {  
+//     const data = Number(Array.from(String(Math.abs(n))).reverse().join('')) * Math.sign(n);
+//     // Check if reversed falls within the 32-bit signed integer range
+//    if (data < Math.pow(-2, 31) || data > Math.pow(2, 31) - 1) {
+//       return 0
+//    } else {
+//         return data 
+//    }
+  
+//  }
+// -2 power 31 <= x <= 2 power 31 - 1
