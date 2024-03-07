@@ -259,3 +259,34 @@
   
 //  }
 // -2 power 31 <= x <= 2 power 31 - 1
+
+
+// 07/03/2024
+// const string = "hello new"
+// const second = "world"
+// console.log(string.charAt(1))
+// console.log(string.concat(second))
+// console.log(string.indexOf("new"))
+// console.log(string.replace("new" , "secondHellow"))
+// console.log(string.slice(0,3))
+// console.log(string.split(" "))
+// console.log(string.trim())
+// First Unique Character in a String
+// Input: s = "leetcode"
+// Output: 0
+// var firstUniqChar = function(s) {
+//     for(let i = 0 ; i < s.length ; i++){
+//         const char = s.charAt(i)
+//         // console.log(char)
+//         // console.log(s.indexOf(char,i + 1))
+//         if (s.indexOf(char) == i && s.indexOf(char, i + 1) == -1) {
+//            console.log(i)
+//         }
+// }
+// // return -1 
+
+   
+// };
+
+// // firstUniqChar("leetcode")
+// firstUniqChar("loveleetcode")
