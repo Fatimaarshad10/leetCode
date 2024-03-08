@@ -116,7 +116,7 @@
 // stringList=['ab', 'ab', 'abc']
 // queries = ['ab', 'abc', 'bc']
 // query check how many ab in the string list
-// abc is 1 time ab 2 time and bc 0 
+// abc is 1 time ab 2 time and bc 0
 
 // function matchingStrings(stringList, queries) {
 //     // Write your code here
@@ -125,10 +125,9 @@
 //     for(let i = 0 ; i < queries.length ; i++ ){
 //         for(let j = 0 ; j < stringList.length ; j++){
 //             if(queries[i] === stringList[j]){
-               
+
 //                 console.log('stringList[j]',stringList[j])
 //                 count++
-               
 
 //             }
 //         }
@@ -139,7 +138,6 @@
 // }
 // matchingStrings(['aba', 'baba', 'aba' , 'xzxb'],  ['aba', 'xzxb', 'ab'])
 // matchingStrings(['def', 'de', 'fgh' , 'xzxb'],  ['de', 'lmn', 'fgh'])
-
 
 // n = 10
 // queries = [[1,5,3],[4,8,7], [6,9,1]]
@@ -152,11 +150,11 @@
 //             const a = pick[0]
 //             const b = pick[1]
 //             const k = pick[2]
-//            newArray[a-1] +=  k 
+//            newArray[a-1] +=  k
 //            if (b < newArray.length) {
 //             newArray[b] -= k;
 //         }
-      
+
 //     }
 //     let max = 0;
 //     let current = 0;
@@ -169,8 +167,6 @@
 
 //     console.log(max);
 // }
-
-
 
 // arrayManipulation(10, [[1,5,3],[4,8,7],[6,9,1]])
 // arrayManipulation(10, [[1, 2 , 100],[2 ,5 ,100],[3 ,4 ,100]])
@@ -192,12 +188,11 @@
 //             const value = board[i][j]
 //             if(value !== '.'){
 //                 const boxIndex = Math.floor(i/3)*3 + Math.floor(j/3)
-//                 if(row[`${i}-${value}`] || 
+//                 if(row[`${i}-${value}`] ||
 //                 column[`${j}-${value}`] ||
 //                 box[`${boxIndex}-${value}`] ){
 //                     return false
 //                 }
-          
 
 //                 row[`${i}-${value}`] = true
 //                 column[`${j}-${value}`] = true
@@ -217,7 +212,6 @@
 // ,[".",".",".","4","1","9",".",".","5"]
 // ,[".",".",".",".","8",".",".","7","9"]])
 
-
 // 05/03/2024
 // var rotate = function(matrix) {
 //     let array = []
@@ -226,7 +220,7 @@
 //             let temp = matrix[i][j]
 //             matrix[i][j] = matrix[j][i]
 //             matrix[j][i] =  temp
-            
+
 //         }
 //     }
 //     for(let i = 0 ; i < matrix.length ; i++){
@@ -234,32 +228,30 @@
 //     }
 //     console.log(matrix)
 // };
-// // 
+// //
 // // Output: [[7,4,1],[8,5,2],[9,6,3]]
 
 // rotate([[1,2,3],[4,5,6],[7,8,9]])
 
-
 // var reverseString = function(s) {
-  
+
 //     console.log(s.reverse())
 // };
 
 // // Output: ["o","l","l","e","h"]
 // reverseString(["h","e","l","l","o"])
 
-// function reverse(n) {  
+// function reverse(n) {
 //     const data = Number(Array.from(String(Math.abs(n))).reverse().join('')) * Math.sign(n);
 //     // Check if reversed falls within the 32-bit signed integer range
 //    if (data < Math.pow(-2, 31) || data > Math.pow(2, 31) - 1) {
 //       return 0
 //    } else {
-//         return data 
+//         return data
 //    }
-  
+
 //  }
 // -2 power 31 <= x <= 2 power 31 - 1
-
 
 // 07/03/2024
 // const string = "hello new"
@@ -283,10 +275,199 @@
 //            console.log(i)
 //         }
 // }
-// // return -1 
+// // return -1
 
-   
 // };
 
 // // firstUniqChar("leetcode")
 // firstUniqChar("loveleetcode")
+
+// 08/03/2024
+
+// const value = -23;
+// remove the negative sign
+// console.log(Math.abs(value))
+// // negative sign one
+// console.log(Math.sign(value))
+// console.log(String(Math.abs(value)))
+// console.log(Array.from(value))
+// console.log(Array.from(String(Math.abs(value))).reverse())
+
+// const string = "123"
+// console.log(Number(String(string)))
+
+// reverse the integer and then make the sign at the top not change the sign
+
+// const string = String(value)
+// const array = new Array()
+// const sign = Math.sign(string)
+
+// for(let i = 0 ; i < string.length ; i++ ){
+//     array.push(string[i])
+// }
+// const onlyspecific = array.splice(1, array.length).reverse()
+// const againString = String(onlyspecific.join(''))
+// console.log(againString * sign)
+// Input: s = "anagram", t = "nagaram"
+// Output: true
+
+// var isAnagram = function (s, t) {
+//   if (s.length === t.length) {
+//     const array1 = Array.from(s);
+//     const array2 = Array.from(t);
+//     const check = array1.every((word) => array2.includes(word));
+//     console.log(check)
+//     const anotherCheck = array2.every((word) => array1.includes(word));
+//     console.log(anotherCheck)
+//     // if (anotherCheck === false && check === true) {
+//     //   console.log(anotherCheck);
+//     // }  else if (anotherCheck === true && check === false){
+//     //     console.log(check)
+//     // }
+//     // else {
+//     //   console.log(check);
+//     // }
+//   } else {
+//     console.log(false);
+//   }
+// };
+// var isAnagram = function (s, t) {
+//     if (s.length === t.length) {
+//       const charCount = {};
+
+//       // Increment count for each character in s
+//       for (const char of s) {
+
+//         charCount[char] = (charCount[char] || 0) + 1;
+//       }
+
+//       // Decrement count for each character in t
+//       for (const char of t) {
+//         if (!charCount[char]) {
+//           console.log(false);
+//           return;
+//         }
+//         charCount[char]--;
+//       }
+
+//       console.log(true);
+//     } else {
+//       console.log(false);
+//     }
+//   };
+// Question no 1
+// var isAnagram = function(s, t) {
+//     // Sort characters in both strings
+//     const sortedS = s.split('').sort().join('');
+//     // console.log(sortedS)
+//     const sortedT = t.split('').sort().join('');
+
+//     // Check if the sorted strings are equal
+//     console.log(sortedS === sortedT);
+//   };
+// isAnagram("anagram", "nagaram");
+// isAnagram("rat", "car");
+
+// isAnagram("aacc", "ccac");
+
+// isAnagram("a", "ab");
+// isAnagram("aa", "a");
+
+// Question no 2
+// In the string the space , comma and just letter and charater then it
+// called the palindrome
+// what  is the ascii character
+// var isPalindrome = function(s) {
+// const firstString = s.replace(/[^a-z0-9]/gi, "").toLowerCase()
+// const secondString = firstString.split("").reverse().join('')
+// console.log(firstString === secondString)
+
+// };
+// isPalindrome( "A man, a plan, a canal: Panama")
+// // backward and forward same
+// isPalindrome( "race a car")
+// isPalindrome( " ")
+
+// Question no 3
+// var myAtoi = function (s) {
+//   let result = 0;
+//   let sign = 1;
+//   let isNonWhiteSpace = false;
+//   let isNumberphase = false;
+//   for (let i = 0; i < s.length; i++) {
+//     let char = s[i];
+//     if (char === " ") {
+//       if (!isNonWhiteSpace) {
+//         continue;
+//       } else {
+//         break;
+//       }
+//     }
+//     isNonWhiteSpace = true;
+//     if (char >= "0" && char <= "9") {
+//       isNumberphase = true;
+//       result = result * 10 + (char - "0");
+//       continue;
+//     }
+//     if (char === "+" && !isNumberphase) {
+//       isNumberphase = true;
+//       continue;
+//     }
+//     if (char === "-" && !isNumberphase) {
+//       isNumberphase = true;
+//       sign *= -1;
+//       continue;
+//     }
+//     break;
+//   }
+//   result *= sign;
+//   console.log(Math.min(Math.max(-(2 ** 31), result), 2 ** 31 - 1));
+// };
+// myAtoi("42");
+
+// Question no 4
+// var strStr = function(haystack, needle) {
+    
+//     const first = haystack.indexOf(needle)
+// if(first !== -1){
+//     return first 
+// }else {
+//     return -1 
+// }
+// };
+// strStr("sadbutsad", "sad")
+// strStr("leetcode", "leeto")
+
+// leetcode", needle = "leeto"
+
+// Question no 5
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+// var longestCommonPrefix = function(strs) {
+//     if (strs.length === 0) {
+//       return '';
+//     }
+//       strs.sort();
+  
+//     const firstStr = strs[0];
+//     const lastStr = strs[strs.length - 1];
+//     console.log(firstStr)
+//     // console.log(lastStr)
+//     // Find the common prefix between the first and last strings
+//     let commonPrefix = '';
+//     for (let i = 0; i < firstStr.length; i++) {
+//       if (firstStr[i] === lastStr[i]) {
+//         commonPrefix += firstStr[i];
+//       } else {
+//         break;
+//       }
+//     }
+  
+//     return commonPrefix;
+//   };
+  
+//   // Example usage:
+//   const inputArray = ['flower', 'flow', 'flight'];
+//   const result = longestCommonPrefix(inputArray);
+//   console.log(result); // Output: 'fl'
+  
