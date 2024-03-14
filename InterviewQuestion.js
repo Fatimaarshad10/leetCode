@@ -471,3 +471,80 @@
 //   const result = longestCommonPrefix(inputArray);
 //   console.log(result); // Output: 'fl'
   
+
+// 14/03/2024
+// fizz buzz 
+// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+// answer[i] == "Fizz" if i is divisible by 3.
+// answer[i] == "Buzz" if i is divisible by 5.
+// answer[i] == i (as a string) if none of the above conditions are true.
+
+// var fizzBuzz = function(n) {
+//     let storeData  = []
+//     for(let i= 1 ; i <= n ; i++){
+//         if(i % 3 === 0 && i % 5 === 0){
+//             storeData.push("FizzBuzz")
+//         }
+//         else if (i % 3 == 0 ){
+//             storeData.push("Fizz")
+
+//         }
+//         else if ( i % 5 === 0){
+//             storeData.push("Buzz")
+           
+//         }else{
+//             storeData.push(i.toString())
+
+//         }
+        
+//     }
+//     console.log(storeData)
+// };
+// fizzBuzz(3)
+// fizzBuzz(5)
+// fizzBuzz(15)
+
+// // Power of three
+// var isPowerOfThree = function(n) {
+//     if (n <= 0) {
+//         return false;
+//     }
+//     // if(Math.cbrt(n) === 3){
+//     //     console.log(true)
+//     // }else{
+
+//     // console.log(false)
+//     while(n%3 === 0){
+//         n /=3
+//     }
+//     return n === 1
+// };
+// isPowerOfThree(-1)
+
+// var romanToInt = function(s) {
+//     var romanNumerals = {
+//         'I': 1,
+//         'V': 5,
+//         'X': 10,
+//         'L': 50,
+//         'C': 100,
+//         'D': 500,
+//         'M': 1000
+//     };
+//     let result = 0;
+//     for(let i = 0 ; i < s.length ; i++){
+//         let current =romanNumerals[s[i]]
+//         let next =  romanNumerals[s[i + 1]];
+//         if ( current < next) {
+       
+//             result += next - current;
+//             i++;
+//         } else {
+//             result += current;
+//         }
+//     }
+//     console.log(result)
+ 
+
+// };
+// romanToInt("MCMXCIV")
