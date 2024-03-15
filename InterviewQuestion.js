@@ -548,3 +548,130 @@
 
 // };
 // romanToInt("MCMXCIV")
+
+// 15/03/2024
+// var removeNthFromEnd = function(head, n) {
+    
+// };
+
+// class Node {
+//     constructor(value){
+//         this.value= value
+//         this.next = null
+//     }
+// }
+
+// class LinkedList {
+//     constructor(){
+//         this.head = null
+//     }
+//     addNode(value){
+//         const newNode = new Node(value)
+//         if(!this.head){
+//             this.head = newNode
+//             return 
+//         }
+//         let current = this.head
+//         while(current.next){
+//             current = current.next
+//         }
+//          current.next = newNode
+//     }
+//     print(){
+//         let current = this.head 
+//         let arrayStore = []
+//         while(current){
+//             arrayStore.push(current.value)
+//             current = current.next 
+//         }
+//         console.log(arrayStore.join('->'))
+        
+//     }
+//     remove(value){
+//         if (!this.head) {
+//             return; 
+//         }
+//         while (this.head && this.head.value === value) {
+//             this.head = this.head.next;
+//         }
+//         let current = this.head
+//         while(current && current.next){
+//             if(current.next.value === value){
+               
+//                 current.next = current.next.next
+//             }else{
+//                 current = current.next
+
+//             }
+//         }
+        
+//     }
+// }
+// const createList = new LinkedList()
+// createList.addNode(1)
+// createList.addNode(2)
+// createList.addNode(3)
+// createList.remove(1)
+// // createList.print()
+
+
+
+// console.log(createList)
+
+// function Node (value , next){
+//     this.value = (value === undefined ? 0 : value);
+//     this.next = (next === undefined ? null : next);
+// }
+// function createLinkedList (value){
+//     let head = new Node(value[0])
+
+//     let current = head 
+//     for(let i = 1 ;i < value.length ; i++){
+//         let newNode = new Node(value[i])
+//         current.next = newNode
+//         current = current.next
+//     }
+//     return head
+
+  
+// }
+// var reverseList = function(head) {
+// let prev = null
+//     let current = head 
+//     while(current){
+//         console.log(current.next)
+//         let nextTemp = current.next
+//         current.next = prev
+//         prev = current
+//         current = nextTemp
+//         console.log(current)
+
+//     }
+//     // console.log(prev)
+
+// };
+// function removeNthFromEnd (head , n){
+//     let dummy = new Node(0)
+//     dummy.next = head
+//     let first = dummy
+//     let second = dummy
+
+//     for(let i = 0 ; i <=n ; i++){
+//         if(first === null){
+//             return null
+//         }
+//         first = first.next
+//     }
+//     while(first !== null){
+//         first = first.next
+//         second = second.next
+//     }
+//     second.next = second.next.next
+//     console.log(dummy.next)
+//     // console.log('first ', first)
+//     // console.log('second' , second)
+// }
+// const value = [1,2,3,4,5]
+// let head = createLinkedList(value)
+// // let newHead = removeNthFromEnd(head, 3);
+// let reverse = reverseList(head);
