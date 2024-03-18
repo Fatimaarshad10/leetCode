@@ -675,3 +675,56 @@
 // let head = createLinkedList(value)
 // // let newHead = removeNthFromEnd(head, 3);
 // let reverse = reverseList(head);
+// 18/03/2024
+class Node {
+    constructor(value){
+        this.value= value
+        this.next = null
+    }
+}
+function createLinkedList (value){
+    let head = new Node(value[0])
+
+    let current = head 
+    for(let i = 1 ;i < value.length ; i++){
+        let newNode = new Node(value[i])
+        current.next = newNode
+        current = current.next
+    }
+    return head
+}
+function mergeLinkedList(first, second) {
+    let dummyHead = new Node(-1);
+    let current = dummyHead;
+
+
+    let currentFirst = first;
+    let currentSecond = second;
+
+    while (currentFirst !== null && currentSecond !== null) {
+        if (currentFirst.value < currentSecond.value) {
+            current.next = currentFirst;
+            currentFirst = currentFirst.next;
+        } else {
+            current.next = currentSecond;
+            currentSecond = currentSecond.next;
+        }
+        current = current.next;
+    }
+// console.log(currentFirst)
+    if (currentFirst !== null) {
+        current.next = currentFirst;
+    } else {
+        current.next = currentSecond;
+    }
+
+    return dummyHead.next;
+}
+
+
+
+const firstList = new createLinkedList([1,2,4])
+const secondList = new createLinkedList([1,3,4])
+const mergeLinked = new mergeLinkedList(firstList,secondList)
+// console.log(firstList)
+// console.log(secondList)
