@@ -427,7 +427,7 @@
 
 // Question no 4
 // var strStr = function(haystack, needle) {
-    
+
 //     const first = haystack.indexOf(needle)
 // if(first !== -1){
 //     return first 
@@ -448,7 +448,7 @@
 //       return '';
 //     }
 //       strs.sort();
-  
+
 //     const firstStr = strs[0];
 //     const lastStr = strs[strs.length - 1];
 //     console.log(firstStr)
@@ -462,15 +462,15 @@
 //         break;
 //       }
 //     }
-  
+
 //     return commonPrefix;
 //   };
-  
+
 //   // Example usage:
 //   const inputArray = ['flower', 'flow', 'flight'];
 //   const result = longestCommonPrefix(inputArray);
 //   console.log(result); // Output: 'fl'
-  
+
 
 // 14/03/2024
 // fizz buzz 
@@ -491,12 +491,12 @@
 //         }
 //         else if ( i % 5 === 0){
 //             storeData.push("Buzz")
-           
+
 //         }else{
 //             storeData.push(i.toString())
 
 //         }
-        
+
 //     }
 //     console.log(storeData)
 // };
@@ -536,7 +536,7 @@
 //         let current =romanNumerals[s[i]]
 //         let next =  romanNumerals[s[i + 1]];
 //         if ( current < next) {
-       
+
 //             result += next - current;
 //             i++;
 //         } else {
@@ -544,14 +544,14 @@
 //         }
 //     }
 //     console.log(result)
- 
+
 
 // };
 // romanToInt("MCMXCIV")
 
 // 15/03/2024
 // var removeNthFromEnd = function(head, n) {
-    
+
 // };
 
 // class Node {
@@ -585,7 +585,7 @@
 //             current = current.next 
 //         }
 //         console.log(arrayStore.join('->'))
-        
+
 //     }
 //     remove(value){
 //         if (!this.head) {
@@ -597,14 +597,14 @@
 //         let current = this.head
 //         while(current && current.next){
 //             if(current.next.value === value){
-               
+
 //                 current.next = current.next.next
 //             }else{
 //                 current = current.next
 
 //             }
 //         }
-        
+
 //     }
 // }
 // const createList = new LinkedList()
@@ -633,7 +633,7 @@
 //     }
 //     return head
 
-  
+
 // }
 // var reverseList = function(head) {
 // let prev = null
@@ -676,55 +676,152 @@
 // // let newHead = removeNthFromEnd(head, 3);
 // let reverse = reverseList(head);
 // 18/03/2024
-class Node {
-    constructor(value){
-        this.value= value
-        this.next = null
-    }
-}
-function createLinkedList (value){
-    let head = new Node(value[0])
+// class Node {
+//     constructor(value){
+//         this.value= value
+//         this.next = null
+//     }
+// }
+// function createLinkedList (value){
+//     let head = new Node(value[0])
 
-    let current = head 
-    for(let i = 1 ;i < value.length ; i++){
-        let newNode = new Node(value[i])
-        current.next = newNode
-        current = current.next
-    }
-    return head
-}
-function mergeLinkedList(first, second) {
-    let dummyHead = new Node(-1);
-    let current = dummyHead;
-
-
-    let currentFirst = first;
-    let currentSecond = second;
-
-    while (currentFirst !== null && currentSecond !== null) {
-        if (currentFirst.value < currentSecond.value) {
-            current.next = currentFirst;
-            currentFirst = currentFirst.next;
-        } else {
-            current.next = currentSecond;
-            currentSecond = currentSecond.next;
-        }
-        current = current.next;
-    }
-// console.log(currentFirst)
-    if (currentFirst !== null) {
-        current.next = currentFirst;
-    } else {
-        current.next = currentSecond;
-    }
-
-    return dummyHead.next;
-}
+//     let current = head 
+//     for(let i = 1 ;i < value.length ; i++){
+//         let newNode = new Node(value[i])
+//         current.next = newNode
+//         current = current.next
+//     }
+//     return head
+// }
+// function mergeLinkedList(first, second) {
+//     let dummyHead = new Node(-1);
+//     let current = dummyHead;
 
 
+//     let currentFirst = first;
+//     let currentSecond = second;
 
-const firstList = new createLinkedList([1,2,4])
-const secondList = new createLinkedList([1,3,4])
-const mergeLinked = new mergeLinkedList(firstList,secondList)
+//     while (currentFirst !== null && currentSecond !== null) {
+//         if (currentFirst.value < currentSecond.value) {
+//             current.next = currentFirst;
+//             currentFirst = currentFirst.next;
+//         } else {
+//             current.next = currentSecond;
+//             currentSecond = currentSecond.next;
+//         }
+//         current = current.next;
+//     }
+// // console.log(currentFirst)
+//     if (currentFirst !== null) {
+//         current.next = currentFirst;
+//     } else {
+//         current.next = currentSecond;
+//     }
+
+//     return dummyHead.next;
+// }
+
+
+
+// const firstList = new createLinkedList([1,2,4])
+// const secondList = new createLinkedList([1,3,4])
+// const mergeLinked = new mergeLinkedList(firstList,secondList)
 // console.log(firstList)
 // console.log(secondList)
+// 20/03/2024
+// Define linked list
+
+// class Node {
+//     constructor(value) {
+//         this.value = value
+//         this.next = null
+
+//     }
+// }
+
+// function createLinkedList(data) {
+//     let first = new Node(data[0])
+//     let check = first
+//     for (let i = 1; i < data.length; i++) {
+//         var newNode = new Node(data[i])
+//         check.next = newNode
+//         check = check.next
+//     }
+//     return first
+// }
+// function palindrome(data) {
+//     let length = 0
+//     let current = data
+//     let values = [];
+//     while (current !== null) {
+//         values.push(current.value);
+//         length++
+//         current = current.next;
+//     }
+//     for (let i = 0; i < Math.floor(length / 2); i++) {
+//         if (values[i] !== values[length - 1 - i]) {
+//             console.log("It's not a palindrome");
+//             return false;
+//         }
+//     }
+//     console.log("It's a palindrome");
+//     return true;
+
+// }
+
+// var reverseList = function (head) {
+//     let prev = null
+//     let current = head
+//     while (current) {
+//         //  If i did not store the next value in temp 
+//         // then next value assign to null bcs prev is null 
+//         let nextTemp = current.next;
+//         current.next = prev
+//         prev = current
+//         current = current.next
+//         current = nextTemp;
+//     }
+//     console.log(prev)
+// };
+
+// var hasCycle = function(head) {
+//     // if there is no value then false 
+//     if (head === null|| head.next === null) {
+//         return false; 
+//     }
+//     let turtle = head
+//     let rabbit = head.next
+//     // if rabbit ke value or next value null then return false 
+//     while (rabbit && rabbit.next) {
+//         // if not null then rabbit or turtle value must be match 
+//         if (turtle === rabbit) {
+//             return true; 
+//         }
+//         turtle = turtle.next;
+//         rabbit = rabbit.next.next;
+//     }
+//     return false; 
+// };
+// const data = [1, 2, 3, 4, 5]
+
+// const firstNode = new createLinkedList(data)
+// const cycle = new hasCycle(firstNode)
+
+// const reverse = new reverseList(data)
+// console.log(reverse)
+
+// const checkPalindrom = new palindrome(firstNode)
+
+// function isPalindrome(string) {
+//     for (let i = 0; i < string.length; i++) {
+//         if (string[i] !== string[string.length - i]) {
+//             console.log("It's not a palindrome");
+//             return false;
+//         }
+//     }
+//     console.log("It's a palindrome");
+//     return true;
+// }
+
+// isPalindrome("eman");
+console.log(Math.floor(5/2))
