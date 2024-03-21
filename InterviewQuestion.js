@@ -824,4 +824,22 @@
 // }
 
 // isPalindrome("eman");
-console.log(Math.floor(5/2))
+// console.log(Math.floor(5/2))
+
+// 21/03/2024
+// Let's understand the binary tree 
+// function isBadVersion(n){
+//     let left = 1 
+//     let right = n
+//     while(left < right){
+//         const mid = Math.floor(left + (right-left)/2)
+//         if(isBadVersion(mid)){
+//             right = mid 
+//         }
+//         else {
+//             left = mid +1 
+//         }
+//     }
+//     return left 
+// }
+
