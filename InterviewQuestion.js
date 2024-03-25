@@ -843,3 +843,39 @@
 //     return left 
 // }
 
+// 25/03/2024
+
+// Binary search tree node definition
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+}
+
+var isValidBST = function(root) {
+    const bst = (node, min, max) => {
+        if (node === null) {
+            return true;
+        }
+        if (node.val <= min || node.val >= max) {
+            return false;
+        }
+   console.log(bst(node.left, min, node.val))
+//    console.log(min)
+//    console.log(node.left)
+
+        return bst(node.left, min, node.val) && bst(node.right, node.val, max);
+    };
+
+
+    return bst(root, Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+};
+
+const node1 = new TreeNode(3);
+const node2 = new TreeNode(1);
+const node3 = new TreeNode(4);
+
+node1.left = node2;
+node1.right = node3;
+
+console.log(isValidBST(node1)); // Output: 2
