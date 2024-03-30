@@ -871,23 +871,23 @@ function TreeNode(val, left, right) {
 //     return bst(root, Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
 // };
 
-var isSymmetric = function(root) {
-    const isMirror = (left, right) => {
-        if (left === null && right === null) return true;
-        if (left === null || right === null || left.val !== right.val) return false;
-        return isMirror(left.left, right.right) && isMirror(left.right, right.left);
-    };
+// var isSymmetric = function(root) {
+//     const isMirror = (left, right) => {
+//         if (left === null && right === null) return true;
+//         if (left === null || right === null || left.val !== right.val) return false;
+//         return isMirror(left.left, right.right) && isMirror(left.right, right.left);
+//     };
 
-    if (root === null) return true;
-    return isMirror(root.left, root.right);
+//     if (root === null) return true;
+//     return isMirror(root.left, root.right);
 
-};
+// };
 
-const node1 = new TreeNode(1);
-const node2 = new TreeNode(2);
-const node3 = new TreeNode(2);
-const node4 = new TreeNode(3);
-const node5 = new TreeNode(3);
+// const node1 = new TreeNode(1);
+// const node2 = new TreeNode(2);
+// const node3 = new TreeNode(2);
+// const node4 = new TreeNode(3);
+// const node5 = new TreeNode(3);
 
 
 
