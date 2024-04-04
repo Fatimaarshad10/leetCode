@@ -846,12 +846,17 @@
 // 25/03/2024
 
 // Binary search tree node definition
-function TreeNode(val, left, right) {
-    this.val = (val === undefined ? 0 : val);
-    this.left = (left === undefined ? null : left);
-    this.right = (right === undefined ? null : right);
+// function TreeNode(val, left, right) {
+//     this.val = (val === undefined ? 0 : val);
+//     this.left = (left === undefined ? null : left);
+//     this.right = (right === undefined ? null : right);
+// }
+class TreeNode {
+    constructor(val) {
+        this.val = val;
+        this.left = this.right = null;
+    }
 }
-
 // var isValidBST = function(root) {
 //     const bst = (node, min, max) => {
 //         if (node === null) {
@@ -891,16 +896,46 @@ function TreeNode(val, left, right) {
 
 
 
-node1.left = node2;
-node1.right = node3;
-node2.left = node4
-node3.left = node5
+// node1.left = node2;
+// node1.right = node3;
+// node2.left = node4
+// node3.left = node5
 
 
-console.log(isSymmetric(node1)); 
+// console.log(isSymmetric(node1)); 
 
 // console.log(isValidBST(node1)); 
 
 
 
-// 29/03/2024
+// 04/04/2024
+var sortedArrayToBST = function(nums) {
+//     let node1 
+//     let node2
+//  for (const data in nums) {
+//    if(nums[data] < 0){
+//     node1 = new TreeNode(nums[data]);
+//     node1.left = node2;
+//    }else{
+//      node2 = new TreeNode(nums[data]);
+//     node1.right = node2;
+//    }
+//  }
+// console.log(node1)
+function helper (left , right){
+    if(left > right){
+        return null
+    } 
+    const mid = Math.floor((left + right)/2)
+    const node  = new TreeNode(nums[mid]);
+    node.left = helper(left , mid -1 )
+    node.right = helper(mid +1 , right)
+    return node
+    // console.log(node)  
+}
+return helper(0 , nums.length - 1 )
+};
+
+const nums = [-10,-3,0,5,9]
+const data = sortedArrayToBST(nums)
+console.log(data)
