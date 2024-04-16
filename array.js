@@ -701,6 +701,7 @@ value--;
 // console.log(thirdMax([2, 1]));         // Output: 2
 // console.log(thirdMax([2, 2, 3, 1]));   // Output: 1
 
+console.log('hello')
   
 // Find All Numbers Disappeared in an Array
 
