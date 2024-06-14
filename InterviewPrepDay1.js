@@ -1,3 +1,4 @@
+// ==================> Day no 1 <==============
 // var merge = function(nums1, m, nums2, n) {
 //     // modified in the nums1 
 //     p1 = m - 1 
@@ -34,53 +35,68 @@
 //     return k 
 // };
 
+// ==================> Day no 2 <==============
 
-var majorityElement = function(nums) {
-    let count = 0 
-    let value ; 
-    if(nums.length === 1){
-       console.log(nums[0])
-    }
-    else{
-        for(let i = 0 ; i < nums.length ; i++){
-            if(nums[count] === nums[i + 1]){
-                value = nums[count]
-                count++    
-            }
+// var majorityElement = function(nums) {
+//     let count = 0 
+//     let value ; 
+//     if(nums.length === 1){
+//        console.log(nums[0])
+//     }
+//     else{
+//         for(let i = 0 ; i < nums.length ; i++){
+//             if(nums[count] === nums[i + 1]){
+//                 value = nums[count]
+//                 count++    
+//             }
+//         }
+//     console.log(value)
+
+//     }
+// };
+
+// majorityElement([6,5,5])
+
+
+// var majorityElement = function(nums) {
+//     let count = 0;
+//     let candidate = null;
+
+//     // Step 1: Find a candidate for the majority element
+//     for (let num of nums) {
+//         if (count === 0) {
+//             candidate = num;
+//         }
+//         count += (num === candidate) ? 1 : -1;
+//     }
+
+//     // Step 2: Validate if the candidate is indeed the majority element
+//     count = 0;
+//     for (let num of nums) {
+//         if (num === candidate) {
+//             count++;
+//         }
+//     }
+
+//     // Step 3: Output the majority element if it exists
+//     if (count > nums.length / 2) {
+//     return candidate
+//     }
+// };
+
+
+// ==================> Day no 3 <==============
+
+var removeDuplicates = function(nums) {
+    if (nums.length === 0) return 0; 
+    let count = 1; 
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[count - 1]) {
+            nums[count] = nums[i]; 
+            count++; 
         }
-    console.log(value)
-
     }
+    console.log(count)
 };
-
-majorityElement([6,5,5])
-
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var majorityElement = function(nums) {
-    let count = 0;
-    let candidate = null;
-
-    // Step 1: Find a candidate for the majority element
-    for (let num of nums) {
-        if (count === 0) {
-            candidate = num;
-        }
-        count += (num === candidate) ? 1 : -1;
-    }
-
-    // Step 2: Validate if the candidate is indeed the majority element
-    count = 0;
-    for (let num of nums) {
-        if (num === candidate) {
-            count++;
-        }
-    }
-
-    // Step 3: Output the majority element if it exists
-    if (count > nums.length / 2) {
-    return candidate
-    }
-};
+// Example usage:
+removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
