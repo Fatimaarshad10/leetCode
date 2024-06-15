@@ -87,16 +87,41 @@
 
 // ==================> Day no 3 <==============
 
+// var removeDuplicates = function(nums) {
+//     if (nums.length === 0) return 0; 
+//     let count = 1; 
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[i] !== nums[count - 1]) {
+//             nums[count] = nums[i]; 
+//             count++; 
+//         }
+//     }
+//     console.log(count)
+// };
+// // Example usage:
+// removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
+
+// ==================> Day no 4 <==============
+// Medium level
 var removeDuplicates = function(nums) {
-    if (nums.length === 0) return 0; 
-    let count = 1; 
+    let count = 1 
+    let occurrences = 1
     for (let i = 1; i < nums.length; i++) {
-        if (nums[i] !== nums[count - 1]) {
-            nums[count] = nums[i]; 
-            count++; 
+        if (nums[i] === nums[i - 1]) {
+            occurrences++;
+        } else {
+            occurrences = 1;
         }
+
+        if (occurrences <= 2) {
+            nums[count] = nums[i];
+            count++;
+        }
+        
     }
-    console.log(count)
+    nums.length = count; 
+    
+    console.log(nums); 
 };
-// Example usage:
-removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
+
+removeDuplicates([1,1,1,2,2,3])
