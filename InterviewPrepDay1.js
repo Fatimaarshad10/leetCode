@@ -103,25 +103,43 @@
 
 // ==================> Day no 4 <==============
 // Medium level
-var removeDuplicates = function(nums) {
-    let count = 1 
-    let occurrences = 1
-    for (let i = 1; i < nums.length; i++) {
-        if (nums[i] === nums[i - 1]) {
-            occurrences++;
-        } else {
-            occurrences = 1;
-        }
+// var removeDuplicates = function(nums) {
+//     let count = 1 
+//     let occurrences = 1
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[i] === nums[i - 1]) {
+//             occurrences++;
+//         } else {
+//             occurrences = 1;
+//         }
 
-        if (occurrences <= 2) {
-            nums[count] = nums[i];
-            count++;
-        }
+//         if (occurrences <= 2) {
+//             nums[count] = nums[i];
+//             count++;
+//         }
         
-    }
-    nums.length = count; 
+//     }
+//     nums.length = count; 
     
-    console.log(nums); 
+//     console.log(nums); 
+// };
+
+// removeDuplicates([1,1,1,2,2,3])
+
+// Jump Game 
+var canJump = function(nums) {
+    let maxReachable = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (i > maxReachable) {
+            return false;
+        }
+        maxReachable = Math.max(maxReachable, i + nums[i]);
+        if (maxReachable >= nums.length - 1) {
+           
+            return true;
+        }
+    }
+    console.log(true);
 };
 
-removeDuplicates([1,1,1,2,2,3])
+canJump([3, 2, 1, 0, 4])
