@@ -127,19 +127,47 @@
 // removeDuplicates([1,1,1,2,2,3])
 
 // Jump Game 
-var canJump = function(nums) {
-    let maxReachable = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (i > maxReachable) {
-            return false;
-        }
-        maxReachable = Math.max(maxReachable, i + nums[i]);
-        if (maxReachable >= nums.length - 1) {
+// ==================> Day no 5 <==============
+
+// var canJump = function(nums) {
+//     let maxReachable = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (i > maxReachable) {
+//             return false;
+//         }
+//         maxReachable = Math.max(maxReachable, i + nums[i]);
+//         if (maxReachable >= nums.length - 1) {
            
-            return true;
+//             return true;
+//         }
+//     }
+//     console.log(true);
+// };
+
+// canJump([3, 2, 1, 0, 4])
+
+// ==================> Day no 6 <==============
+// Another jump count 
+var jump = function(nums) {
+    let count = 0; 
+    let currentEnd = 0; 
+    let farthest = 0; 
+
+    for (let i = 0; i < nums.length - 1; i++) {
+        farthest = Math.max(farthest, i + nums[i]);
+
+        if (i == currentEnd) {
+            count++;
+            currentEnd = farthest;
+
+            if (currentEnd >= nums.length - 1) {
+                break;
+            }
         }
     }
-    console.log(true);
+
+   console.log(count)
 };
 
-canJump([3, 2, 1, 0, 4])
+
+jump([2,3,1,1,4])
