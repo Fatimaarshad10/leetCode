@@ -148,26 +148,57 @@
 
 // ==================> Day no 6 <==============
 // Another jump count 
-var jump = function(nums) {
-    let count = 0; 
-    let currentEnd = 0; 
-    let farthest = 0; 
+// var jump = function(nums) {
+//     let count = 0; 
+//     let currentEnd = 0; 
+//     let farthest = 0; 
 
-    for (let i = 0; i < nums.length - 1; i++) {
-        farthest = Math.max(farthest, i + nums[i]);
+//     for (let i = 0; i < nums.length - 1; i++) {
+//         farthest = Math.max(farthest, i + nums[i]);
 
-        if (i == currentEnd) {
-            count++;
-            currentEnd = farthest;
+//         if (i == currentEnd) {
+//             count++;
+//             currentEnd = farthest;
 
-            if (currentEnd >= nums.length - 1) {
-                break;
-            }
-        }
+//             if (currentEnd >= nums.length - 1) {
+//                 break;
+//             }
+//         }
+//     }
+
+//    console.log(count)
+// };
+
+
+// jump([2,3,1,1,4])
+
+// ==================> Day no 7 <==============
+
+
+var maxProfit = function(prices) {
+    if (prices.length === 0) {
+        return 0;
     }
+    
+    let minPrice = prices[0]; 
+    let maxProfit = 0; 
+    
+    for (let i = 1; i < prices.length; i++) {
+        let currentPrice = prices[i];
+        
+        if (currentPrice < minPrice) {
+            minPrice= currentPrice;
+        }
+        
+         let Profit = currentPrice - minPrice;
+        
+        if (Profit > maxProfit) {
+            maxProfit = Profit;
+        }
+        
 
-   console.log(count)
+    }
+    
+    console.log(maxProfit)
 };
-
-
-jump([2,3,1,1,4])
+maxProfit([7,1,5,3,6,4])
