@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./javaScript/InterviewPrepDay1.js"
+    "start": "node ./javaScript/Dayno1.js"
   },
   "keywords": [],
   "author": "",
