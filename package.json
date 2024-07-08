@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./javaScript/Dayno1.js"
+    "start": "node ./javaScript/Dayno2.js"
   },
   "keywords": [],
   "author": "",
