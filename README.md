@@ -17,7 +17,6 @@ My target is to solve at least 3 LeetCode problems daily, documenting each solut
 Welcome back `05/07/2024`
 <h1>Python</h1> 
 
-| Date | problems | Complexity Analysis |
 
 ## Authors
 
