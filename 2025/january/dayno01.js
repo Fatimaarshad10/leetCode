@@ -1,11 +1,11 @@
-// Recursion
+// Push Button
 function pushButton() {
     let mainArray = document.querySelector('.main-array')
     let item = mainArray.querySelectorAll('li')
     const totalItem = item.length
     if (totalItem === 10) {
-        return alert("Can't Exceed more...")
-        
+        alert("Can't Exceed more...")
+        return
     }
     const newItem = document.createElement('li')
     const newbtn = document.createElement('button')
@@ -13,9 +13,9 @@ function pushButton() {
     newItem.appendChild(newbtn)
     mainArray.appendChild(newItem)
     newbtn.classList.add('animate')
-    newbtn.addEventListener('animationend', () => {
-    })
 }
+
+// Pop Button
 
 function popButton() {
     let mainArray = document.querySelector('.main-array')
@@ -27,37 +27,60 @@ function popButton() {
     }
     const value = item[totalItem - 1]
     value.classList.add('animate-pop')
-    value.classList.add('dust');
-    const offsetX = Math.random() * 30 - 15; 
-    const offsetY = Math.random() * 30 - 15; 
-    value.style.left = `${offsetX}px`;
-    value.style.top = `${offsetY}px`;
     value.addEventListener('animationend', () => {
         value.remove()
-        dust.remove();
 
     })
 }
+
+// Reverse Button
+
 function reversebtn() {
     let mainArray = document.querySelector('.main-array')
     let item = mainArray.querySelectorAll('li')
-    let btn = mainArray.querySelectorAll('button')
     const totalItem = item.length
-    let count = 1
-    if (totalItem === 0) {
-        alert("Array is empty nothing to reverse....")
-        return
+    let cache_array = []
+    for (let i = totalItem - 1; i >= 0; i--) {
+        cache_array.push(item[i])
     }
-    if (parseInt(btn[0].textContent) === totalItem) {
-        for (let i = 0; i < totalItem; i++) {
-            btn[i].textContent = count
-            count++
-        }
-    }
-    else {
-        for (let i = totalItem; i >= 1; i--) {
-            btn[i - 1].textContent = count
-            count++
-        }
-    }
+    mainArray.innerHTML = ''
+    cache_array.forEach(item => {
+        mainArray.appendChild(item)
+    })
 }
+// Slice Button 
+function slicebtn() {
+    const mainArray = document.querySelector('.main-array');
+    const items = document.querySelectorAll('.main-array li'); 
+    const totalItem = items.length
+    const start = parseInt(document.getElementById('start').value); 
+    const end = parseInt(document.getElementById('end').value); 
+    mainArray.innerHTML = '';
+    for (let i = start; i < end; i++) {
+        mainArray.appendChild(items[i]);
+    }
+    const button = document.createElement('button')
+    button.textContent = `Total length ${totalItem}`
+    document.body.append(button)
+}
+
+// const data = [1,2,3,4,4]
+// const newData = data.slice(0,3)
+// console.log(newData);
+// let count = 1
+// if (totalItem === 0) {
+//     alert("Array is empty nothing to reverse....")
+//     return
+// }
+// if (parseInt(btn[0].textContent) === totalItem) {
+//     for (let i = 0; i < totalItem; i++) {
+//         btn[i].textContent = count
+//         count++
+//     }
+// }
+// else {
+//     for (let i = totalItem; i >= 1; i--) {
+//         btn[i - 1].textContent = count
+//         count++
+//     }
+// }
