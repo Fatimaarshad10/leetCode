@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    button {
+        padding: 1rem;
+        border: none;
+        box-shadow: 2px 2px 2px 2px;
+    }
+
+    @keyframes buttonAnimation {
+        0% {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+
+        50% {
+            transform: translateX(-10px);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes buttonpopAnimation {
+        0% {
+            transform: translateX(-30px);
+            opacity: 0;
+        }
+
+       
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+
+    .dust {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgba(6, 4, 4, 0.7);
+        border-radius: 50%;
+        opacity: 0;
+        animation: dustAnimation 1s forwards;
+    }
+
+    @keyframes dustAnimation {
+        0% {
+            opacity: 1;
+            transform: scale(0.5) translateY(0) translateX(0);
+        }
+
+        50% {
+            opacity: 0.5;
+            transform: scale(1.5) translateY(-20px) translateX(-10px);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(2) translateY(-40px) translateX(10px);
+        }
+    }
+
+
+    .animate {
+        animation: buttonAnimation 0.5s ease-out;
+    }
+
+    .animate-pop {
+        animation: buttonpopAnimation 0.5s ease-out;
+    }
+</style>
+
+<body>
+
+    <h1 style="text-align: center;">Array</h1>
+    <ul class="main-array">
+        <li><button>1</button></li>
+        <li><button>2</button></li>
+        <li><button>3</button></li>
+        <li><button>4</button></li>
+        <li><button>5</button></li>
+
+    </ul>
+    <ul>
+        <li><button onclick="pushButton()">push</button></li>
+        <li><button onclick="popButton()">pop</button></li>
+        <li><button onclick="reversebtn()">reverse</button></li>
+    </ul>
+    <script src="./dayno01.js"></script>
+</body>
+
+</html>
