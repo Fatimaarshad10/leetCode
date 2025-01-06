@@ -7,12 +7,31 @@
     <title>Document</title>
 </head>
 <style>
+    body{
+        text-align: center;
+
+    }
+    .container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid black;
+    }
+
     ul {
         list-style: none;
         display: flex;
         justify-content: center;
         gap: 1rem;
         flex-wrap: wrap;
+
+
     }
 
     button {
@@ -65,7 +84,8 @@
         flex-direction: column;
         gap: 1rem;
     }
-    form > button{
+
+    form>button {
         max-width: 100px;
         background-color: rgb(35, 29, 92);
         font-size: 1rem;
@@ -73,37 +93,61 @@
         color: white;
         box-shadow: 2px 2px 2px #aaaaaa;
     }
-    input{
+
+    input {
         max-width: 100px;
         padding: 0.5em;
     }
+    .card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 
 <body>
+    <h1>Array</h1>
 
-    <h1 style="text-align: center;">Array</h1>
-    <ul class="main-array">
-        <li><button>1</button></li>
-        <li><button>2</button></li>
-        <li><button>3</button></li>
-        <li><button>4</button></li>
-        <li><button>5</button></li>
+    <div class="container">
 
-    </ul>
-    <ul>
-        <li><button onclick="pushButton()">push</button></li>
-        <li><button onclick="popButton()">pop</button></li>
-        <li><button onclick="reversebtn()">reverse</button></li>
-    </ul>
+        <div class="left">
+            <button onclick="pushButton()">push</button>
+            <button onclick="popButton()">pop</button>
+            <button onclick="reversebtn()">reverse</button>
+        </div>
+        <ul class="main-array">
+            <li><button>1</button></li>
+            <li><button>2</button></li>
+            <li><button>3</button></li>
+            <li><button>4</button></li>
+            <li><button>5</button></li>
+
+        </ul>
+    </div>
+
+
     <div>
-        <form >
-            <input type="number"  placeholder="start" id="start">
-            <input type="number"  placeholder="end" id="end">
+        <form>
+            <input type="number" placeholder="Start" id="start">
+            <input type="number" placeholder="End" id="end">
             <button type="button" onclick="slicebtn()">Slice</button>
-    
+
         </form>
     </div>
-  
+    <section class="section section-home-sector">
+        <div class="sectors-list">
+          <div class="card card-1">Card 1 Content</div>
+          <div class="card card-2">Card 2 Content</div>
+          <div class="card card-3">Card 3 Content</div>
+          </div>
+      </section>
+    <h1>Pointer And Reference In JavaScript</h1>
+    <p id="pointer"></p>
     <script src="./dayno01.js"></script>
 </body>
 

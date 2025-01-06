@@ -52,15 +52,19 @@ function reversebtn() {
 function slicebtn() {
     const mainArray = document.querySelector('.main-array');
     const items = document.querySelectorAll('.main-array li'); 
-    const totalItem = items.length
     const start = parseInt(document.getElementById('start').value); 
     const end = parseInt(document.getElementById('end').value); 
     mainArray.innerHTML = '';
     for (let i = start; i < end; i++) {
         mainArray.appendChild(items[i]);
     }
+    const itemData = document.querySelectorAll('.main-array li'); 
+    if(itemData.length === 0 ){
+        alert("User cannot write in the input field because there is no array length that can be sliced");
+    }
     const button = document.createElement('button')
-    button.textContent = `Total length ${totalItem}`
+    button.textContent = `Total length ${itemData.length}`
+    button.style.marginTop = '10px'
     document.body.append(button)
 }
 
@@ -84,3 +88,34 @@ function slicebtn() {
 //         count++
 //     }
 // }
+
+// Pointer in js 
+
+const objectref = {
+    num : 10
+}
+function pointer(obj) {
+    obj.num = 20
+}
+pointer(objectref)
+console.log(objectref.num);
+
+const person = {
+    name : 'John',
+    age : 25
+}
+// document.getElementById('pointer').innerHTML = person
+document.getElementById('pointer').innerHTML = person.name
+
+
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // Optional: Stop observing after animation
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
