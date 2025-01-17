@@ -4,3 +4,8 @@
 // etc
 // Apache 
 // Nginx 
+
+// Read the file 
+// nano fileName
+// open file 
+// cat syslogsls
