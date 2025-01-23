@@ -116,71 +116,60 @@
 #     print(line)
 
 
-# import math
+# Traveling Salesman problem
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits> // Include this for LLONG_MAX and LLONG_MIN
+# using namespace std;
+# int main() {
+#     int T;
+#     cin >> T;
+#     while (T--) {
+#         int N;
+#         cin >> N;
+#         long long min_s = LLONG_MAX;
+#         long long max_s = LLONG_MIN;
+#         for (int i = 0; i < N; ++i) {
+#             long long x, y;
+#             cin >> x >> y;
+#             long long s = x + y;
+#             if (s < min_s) min_s = s;
+#             if (s > max_s) max_s = s;
+#         }
+#         cout << 2 * (max_s - min_s) << endl;
+#     }
+#     return 0;
+# }
 
-# def minimum_round_trip(x1, y1, x2, y2):
-#     distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
-#     return 2 * distance
 
-# # Input coordinates
-# x1, y1 = map(int, input("Enter coordinates of city 1 (x1 y1): ").split())
+# Problem no 04
+# Scoreboard Screenshots
 
-# x2, y2 = map(int, input("Enter coordinates of city 2 (x2 y2): ").split())
-
-# # Compute minimum round-trip distance
-# result = minimum_round_trip(x1, y1, x2, y2)
-# print(f"The minimum round-trip distance is: {result:.2f}")
-
-
-from collections import deque
-
-def is_valid_ordering(N, K, scores):
-    graph = [[] for _ in range(N)]
-    in_degree = [0] * N
+# def valid_ordering(N, K, screenshots):
+#     sorted_indices = sorted(range(N), key=lambda i: screenshots[i])
     
-    for i in range(N):
-        for j in range(i + 1, N):
-            valid = True
-            for team in range(K):
-                if scores[i][team] > scores[j][team]:
-                    valid = False
-                    break
-            if valid:
-                graph[i].append(j)
-                in_degree[j] += 1
-            valid = True
-            for team in range(K):
-                if scores[j][team] > scores[i][team]:
-                    valid = False
-                    break
-            if valid:
-                graph[j].append(i)
-                in_degree[i] += 1
-                
-    queue = deque()
-    result = []
+#     for j in range(K):  
+#         for i in range(1, N): 
+#             if screenshots[sorted_indices[i - 1]][j] > screenshots[sorted_indices[i]][j]:
+#                 print("NO")
+#                 return
     
-    for i in range(N):
-        if in_degree[i] == 0:
-            queue.append(i)
-    
-    while queue:
-        node = queue.popleft()
-        result.append(node + 1) 
-        
-        for neighbor in graph[node]:
-            in_degree[neighbor] -= 1
-            if in_degree[neighbor] == 0:
-                queue.append(neighbor)
-    
-    if len(result) == N:
-        return "YES", result
-    else:
-        return "NO", []
+#     print("YES")
+#     print(" ".join(map(str, [index + 1 for index in sorted_indices])))
 
-N, K = map(int, input().split())
-scores = [list(map(int, input().split())) for _ in range(N)]
-result, order = is_valid_ordering(N, K, scores)
-print(result)
-if result == "YES":
-    print(" ".join(map(str, order)))
+# # Input Handling
+# if __name__ == "__main__":
+#     import sys
+#     input = sys.stdin.read
+#     data = input().split()
+    
+#     N, K = map(int, data[:2])
+    
+#     screenshots = []
+#     idx = 2
+#     for _ in range(N):
+#         screenshots.append(list(map(int, data[idx:idx + K])))
+#         idx += K
+    
+#     valid_ordering(N, K, screenshots)
