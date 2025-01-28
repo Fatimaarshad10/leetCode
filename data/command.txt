@@ -1,0 +1,17 @@
+Create a node js setup in the aws server 
+sudo apk install node , npm 
+cd /var/
+var --> mkdir project-01
+cd project-01
+project-01 --> npm i
+open the file --> nano file_name 
+ctrl + K (cut all)
+Ctrl + S (Save)
+Ctrl + X (exit)
+Mongodb Connection 
+How to upload the file from local to server 
+Ubuntu Virtual environment here run the command 
+sftp ubuntu@13.60.42.170
+This command use to connect to the server 
+scp /home/fatima/customer.csv root@13.60.42.170:/var/testing_mongodb
+identify the path where these folder are setup 
