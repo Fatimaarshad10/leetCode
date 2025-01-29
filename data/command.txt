@@ -15,3 +15,48 @@ sftp ubuntu@13.60.42.170
 This command use to connect to the server 
 scp /home/fatima/customer.csv root@13.60.42.170:/var/testing_mongodb
 identify the path where these folder are setup 
+With Age Query the Object Id 
+1- 319ms
+2- 317ms
+3- 304ms
+4- 300ms
+5- 303ms
+6- 304ms
+7- 304ms
+8- 305ms
+9- 301ms
+10- 303ms
+Average Rate = 306 ms
+
+With Custom Id 
+1- 155ms
+2- 159ms
+3- 152ms
+4- 150ms
+5- 149ms
+6- 152ms
+7- 151ms
+8- 149ms
+9- 149ms
+10- 150ms
+Average Rate = 150.6ms 
+
+With Object Id 
+1- 651ms
+2- 632ms
+3- 637ms
+4- 627ms
+5- 628ms
+6- 655ms
+7- 625ms
+8- 640ms
+9- 645ms
+10- 658ms
+Average Rate = 639.8ms
+
+
+
+
+
+
+
