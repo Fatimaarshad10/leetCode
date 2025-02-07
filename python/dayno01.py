@@ -51,3 +51,4 @@ class student(person):
         print("Welcome", self.fname, self.lname, "to the class of", self.graduationyear)
 second_person = student('noor' , "fatima" , 2024)
 second_person.welcome()
+# inheritance
