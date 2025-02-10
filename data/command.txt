@@ -58,7 +58,7 @@ Average Rate = 639.8ms
 
 work on the videos 
 
-
+10-02-2025
 font-size: clamp(1rem, 2vw, 1.5rem);
 2vw mean 1000 viewport 20px 
 16px to 24px This 20 is in the range so =20px
@@ -75,4 +75,13 @@ field-sizing = content
 picture  tag in the srcset for every screen 
 object fit cover 
 
-
+onPointerMove add the styling with the state 
+const [position, setPosition] = useState({
+    x: 0,
+    y: 0
+  })
+Problem in the react main website
+Synced Inputs
+filter a list
+change the color 
+hover effect
