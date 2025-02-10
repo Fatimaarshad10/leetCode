@@ -59,7 +59,20 @@ Average Rate = 639.8ms
 work on the videos 
 
 
+font-size: clamp(1rem, 2vw, 1.5rem);
+2vw mean 1000 viewport 20px 
+16px to 24px This 20 is in the range so =20px
+2vw mean 500 viewport 10px 
+16px to 24px This 20 is in the range so = 16px
 
+1rem = 16px 
+0.5em = 8px
+100% full width 
+min-width is this value will be greater 
+max-width is this value will be less then 
+field-sizing = content 
 
+picture  tag in the srcset for every screen 
+object fit cover 
 
 
