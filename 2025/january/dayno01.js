@@ -91,31 +91,31 @@ function slicebtn() {
 
 // Pointer in js 
 
-const objectref = {
-    num : 10
-}
-function pointer(obj) {
-    obj.num = 20
-}
-pointer(objectref)
-console.log(objectref.num);
+// const objectref = {
+//     num : 10
+// }
+// function pointer(obj) {
+//     obj.num = 20
+// }
+// pointer(objectref)
+// console.log(objectref.num);
 
-const person = {
-    name : 'John',
-    age : 25
-}
-// document.getElementById('pointer').innerHTML = person
-document.getElementById('pointer').innerHTML = person.name
+// const person = {
+//     name : 'John',
+//     age : 25
+// }
+// // document.getElementById('pointer').innerHTML = person
+// document.getElementById('pointer').innerHTML = person.name
 
 
-const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-});
+// const cards = document.querySelectorAll('.card');
+// const observer = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('show');
+//       observer.unobserve(entry.target);
+//     }
+//   });
+// });
 
-cards.forEach(card => observer.observe(card));
+// cards.forEach(card => observer.observe(card));

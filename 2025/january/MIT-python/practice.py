@@ -173,3 +173,22 @@
 #         idx += K
     
 #     valid_ordering(N, K, screenshots)
+
+class Animal:
+        def __init__(self, name, species):
+                self.name = name
+                self.species = species
+        def move(self):
+                print("Mehow")
+        
+class Lion:
+        def __init__(self,name, species):
+                self.name = name
+                self.species = species
+        def move(self):
+                print("ehw")
+        
+lion_no_01 = Lion('lion' , 'animal')
+print(lion_no_01.name)
+print(lion_no_01.species)
+
