@@ -85,3 +85,6 @@ Synced Inputs
 filter a list
 change the color 
 hover effect
+
+18-02-2025
+Server file transfer
