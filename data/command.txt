@@ -88,3 +88,6 @@ hover effect
 
 18-02-2025
 Server file transfer
+
+20-02-2024
+Working on server where deploment of the frontend website
